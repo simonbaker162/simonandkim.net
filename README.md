@@ -1,5 +1,5 @@
 # simonandkim.net
-Public repo for my wedding website developed to collect guest RSVPs.
+Public repo for my wedding website developed to collect guest RSVPs. 
 
 Deployed with Heroku to custom domain at https://www.simonandkim.net.
 

@@ -1,0 +1,324 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* BASIC SETUP */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+html {
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 780px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fffff5;
+  color: #052879;
+  font-family: "Lato", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* TYPOGRAPHY */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 3rem;
+  letter-spacing: 0.03rem;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plain,
+.subheading {
+  font-family: "Lustria", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 2rem 0;
+}
+
+.date {
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 780px) {
+  .subheading {
+    margin-bottom: 2rem;
+  }
+}
+
+.fancy {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+}
+
+.fancy-big {
+  font-family: "Dancing Script", cursive;
+  font-size: 4.5rem;
+}
+
+.heading__span {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.form-heading {
+  font-family: "Lustria", serif;
+  font-weight: 500;
+  margin: 8rem auto;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* CONTAINERS */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+section::before {
+  content: "";
+  height: 0.1rem;
+  background-color: #031b531a;
+  width: 100%;
+  transform: translateY(-2rem);
+  margin: 1rem auto;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 780px) {
+  .container {
+    margin: 40px 10%;
+  }
+}
+
+.form-container {
+  max-width: 42rem;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* FORMS */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.form {
+  width: 100%;
+}
+
+.form-heading {
+  margin-top: 8rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .form-container {
+    margin: 2rem 10%;
+  }
+  .form-heading {
+    margin-top: 4rem;
+  }
+}
+
+.result-container {
+  margin-top: 35vh;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 2rem auto;
+}
+
+input,
+select,
+textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: inherit;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #aaa;
+}
+
+input,
+select {
+  margin-bottom: 2rem;
+}
+
+textarea {
+  margin-bottom: 4rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* HOME PAGE LAYOUT */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.simonkim-photo {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 1rem 2.5rem 0.2rem #031b535d;
+}
+
+.venue-photo {
+  display: block;
+  align-self: center;
+  width: 70%;
+  border-radius: 10px;
+  margin: 2rem auto;
+  box-shadow: 0 1rem 2.5rem 0.2rem #031b535d;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* BUTTONS */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.link,
+.link:active,
+.link:visited {
+  text-decoration: none;
+}
+
+.link,
+.button {
+  display: inline-block;
+  background-color: #fffff5;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #052879;
+  border: 0.1rem solid #052879;
+  border-radius: 2rem;
+  font-size: 2rem;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 0 0.2rem 0.1rem #052879;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.link:hover,
+.button:hover {
+  background-color: #052879;
+  color: #fffff5;
+  cursor: pointer;
+}
+
+.form-access {
+  align-self: center;
+}
+
+.button-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ANIMATIONS*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.fade-in {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.delay1 {
+  animation-delay: 2s;
+  animation-duration: 1.5s;
+}
+
+.delay2 {
+  animation-delay: 2.5s;
+  animation-duration: 1s;
+}
+
+.move-in {
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  display: inline-block;
+}
+
+.move-in-left {
+  animation-name: moveInLeft;
+}
+
+.move-in-right {
+  animation-name: moveInRight;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40rem);
+  }
+
+  80% {
+    opacity: 65%;
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40rem);
+  }
+
+  80% {
+    opacity: 65%;
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

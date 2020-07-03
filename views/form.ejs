@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lato|Lustria&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <div class="form-container form-heading">
+
+        <header>
+            <h1 class="subheading">RSVP Form</h1>
+        </header>
+
+    </div>
+
+
+    <section class="form-container">
+
+        <form action="/numguests" method="post">
+
+            <label for="numGuests">How many invited guests are you RSVPing for?
+                (Including invited guests who will not be attending).
+            </label>
+
+            <input type="number" name="numguests" id="numGuests" placeholder="Enter number of guests" min="0" max="10"
+                required>
+
+            <div class="button-row">
+                <button type="submit" class="button" name="submitnumguests" id="submitNumGuests">Submit Number</button>
+                <a href="/" class="link">Return</a>
+            </div>
+
+        </form>
+
+    </section>
+
+
+
+    <% if(numberOfGuests == 1){ %>
+
+    <section class="form-container">
+
+        <p> You are RSVPing for <%= numberOfGuests %> guest.
+            If this is incorrect, please change it above before proceeding to fill in the form below.
+        </p>
+
+    </section>
+
+    <% } else if (numberOfGuests > 1){ %>
+
+    <section class="form-container">
+
+        <p> You are RSVPing for <%= numberOfGuests %> guests.
+            If this is incorrect, please change it above before proceeding to fill in the form below.
+        </p>
+
+    </section>
+
+    <% } %>
+
+
+
+    <% if(numberOfGuests > 0){ %>
+
+    <section class="form-container">
+
+        <form action="/form" class="form" method="post">
+
+            <% for(let i = 1; i <= numberOfGuests; i++){ %>
+
+            <h2 class="subheading">Guest <%= i %> </h2>
+
+            <label for="firstName<%=i%>">Guest First Name:</label>
+            <input type="text" name="firstname" id="firstName<%=i%>" placeholder="Enter First Name" required></input>
+
+            <label for="lastName<%=i%>">Guest Last Name:</label>
+            <input type="text" name="lastname" id="lastName<%=i%>" placeholder="Enter Last Name" required></input>
+
+            <label for="selectAttending<%=i%>">Guest Will Be Attending:</label>
+            <select name="selectattending" id="selectAttending<%=i%>" class="select" required>
+                <option value="reception">Reception only</option>
+                <option value="ceremony">Ceremony only</option>
+                <option value="both">Ceremony and reception</option>
+                <option value="none">Not attending</option>
+            </select>
+
+            <label for="dietReqs<%=i%>">Guest Dietary Requirements:</label>
+            <textarea rows="5" name="dietreqs" id="dietReqs<%=i%>"
+                placeholder="Leave blank if guest has no dietary requirements."></textarea>
+
+            <% } %>
+
+
+
+    </section>
+
+    <section class="form-container">
+
+        <p>Please check your form carefully before submitting.</p>
+
+        <div class="button-row">
+            <button type="submit" class="button" id="submitRSVP">Submit Form</button>
+            <a href="/" class="link">Return</a>
+        </div>
+
+        </form>
+
+    </section>
+
+    <% } %>
+
+
+
+</body>
+
+</html>

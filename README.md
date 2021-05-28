@@ -1,7 +1,4 @@
 # simonandkim.net
-Public repo for my wedding website developed to collect guest RSVPs. 
+Repository for website I built to collect RSVPs for my wedding. Originally deployed with Heroku to custom domain at https://www.simonandkim.net - now no longer live as my wedding took place in August 2020!
 
-Deployed with Heroku to custom domain at https://www.simonandkim.net (no longer live as wedding took place August 2020!).
-
-Built using:
-HTML, CSS, Javascript, Node.js, Express, EJS, MongoDB, Mongoose.
+Stack: HTML, CSS, Javascript, EJS, Node.js, Express.js, MongoDB Atlas, Mongoose
